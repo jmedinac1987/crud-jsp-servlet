@@ -7,7 +7,7 @@
         <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
         <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" integrity="sha384-WskhaSGFgHYWDcbwN70/dfYBj47jz9qbsMId/iRN3ewGhXQFZCSftd1LZCfmhktB" crossorigin="anonymous">
         <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.0.13/css/all.css" integrity="sha384-DNOHZ68U8hZfKXOrtjWvjxusGo9WQnrNx2sqG0tfsghAvtVlRW3tvkXWZh58N9jp" crossorigin="anonymous">
-        <title>CRUD con JSP, Servlet and MySQL</title>
+        <title>Conexión a Mysql</title>
     </head>
    
     <body>
@@ -17,19 +17,7 @@
         </nav>
         
         <div class="container" style="padding-top: 20px; ">
-            <%  
-                String titulo = "";
-                
-                if(request.getParameter("action").equals("create"))
-                {
-                    titulo = "Ingresar Usuario";
-                }
-                else
-                {
-                    titulo = "Editar Usuario";
-                }
-            %>
-            <h2 class="display-4"><%=titulo%></h2>
+            <h2 class="display-4">Eliminar</h2>
             <a id="return" href="#" class="btn btn-ligth"><i class="fa fa-backward"> Regresar</i></a>
         </div>
         
@@ -40,15 +28,15 @@
                         <input hidden="true" readonly="readonly" name="id" value="<c:out value="${user.id}"/>">
                         <div class="form-group">
                             <label for="nombre">Nombre Usuario: </label>
-                            <input class="form-control" id="nombre_usuario" name="nombre_usuario" type="text" value="<c:out value="${user.nombre_usuario}"/>" placeholder="Ingrese su nombre de usuario" required>
+                            <input class="form-control" id="nombre_usuario" name="nombre_usuario" type="text" value="<c:out value="${user.nombre_usuario}"/>" placeholder="Ingrese su nombre de usuario" required  disabled="true">
                         </div>
                         <div class="form-group">
                             <label for="email">E-mail: </label>
-                            <input class="form-control" id="email" name="email" type="email" value="<c:out value="${user.email}"/>" placeholder="example@example.com" required>
+                            <input class="form-control" id="email" name="email" type="email" value="<c:out value="${user.email}"/>" placeholder="example@example.com" required  disabled="true">
                         </div>
                         <br/>    
                         <div class="form-group">
-                            <input type="submit" id="enviar" class="btn btn-outline-secondary btn-block" name="guardar" value="Guardar">                            
+                            <input type="submit" id="enviar" class="btn btn-outline-danger btn-block" name="eliminar" value="Eliminar">                            
                         </div>
                     </form>
                 </div>
